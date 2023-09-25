@@ -6,10 +6,11 @@ Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 ## Alunos integrantes da equipe
 
 * Eduardo Nunes Neumann
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-
+* Marlon Caetano Silva Rodrigues
+* Luan de Amorim Dourado Fonseca
+* Pedro Augusto Sodre de Oliveira
+* Paulo Ribeiro da Silva Junior
+* Marco Henrique Coelho Rocha
 ## Professores responsáveis
 
 * Nome completo do professor 1
