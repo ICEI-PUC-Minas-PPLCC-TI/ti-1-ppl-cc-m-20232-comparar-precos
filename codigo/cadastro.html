@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <header>
+    <div class="content">
+      <nav>
+        <p class="brand">Comparar<strong>Preços</strong></p>
+        <ul>
+          <li><a href="filtro.html">Procurar</a></li>
+          <li><a href="">Mapa</a></li>
+          <li><a href="index.html">Home</a></li>
+
+        </ul>
+      </nav>
+
+
+
+    </div>
+  </header>
+  <header class="gpspostosprox">
+    <h1>GPS - Postos Próximos</h1>
+  </header>
+  <h2>Cadastro de postos</h2>
+  <hr>
+  <div class="input-container">
+    <div class="nome">
+      <h5>Nome do posto</h5>
+      <input type="text" id="inputNome">
+    </div>
+    <div class="nome">
+      <h5>Rua</h5>
+      <input type="text" id="inputRua">
+    </div>
+    <div class="nome">
+      <h5>Bairro</h5>
+      <input type="text" id="inputBairro">
+    </div>
+    <div class="nome">
+      <h5>CEP</h5>
+      <input type="text" id="inputCEP">
+    </div>
+    <div class="nome">
+      <h5>Numero</h5>
+      <input type="text" id="inputNumero">
+    </div>
+    <div class="nome">
+      <h5>Valor do combustivel</h5>
+      <input type="text" id="inputValor">
+    </div>
+    <div class="nome">
+      <h5>Mapa</h5>
+      <input type="text" id="inputMapa">
+    </div>
+    <div class="nome">
+      <h5>Latitude</h5>
+      <input type="text" id="inputLat">
+    </div>
+    <div class="nome">
+      <h5>Longitude</h5>
+      <input type="text" id="inputLong">
+    </div>
+  </div>
+
+  <button id="btnCor"
+    onclick="cadastro(document.getElementById('inputNome').value,document.getElementById('inputRua').value,document.getElementById('inputBairro').value,document.getElementById('inputCEP').value,document.getElementById('inputNumero').value,document.getElementById('inputValor').value,document.getElementById('inputMapa').value,document.getElementById('inputLat').value,document.getElementById('inputLong').value)">Salvar</button>
+  <hr>
+  <div id="apagar">
+    <input type="text" id="postIdInput" placeholder="Digite o ID do posto">
+    <button id="btnApagar">Apagar Posto</button>
+  </div>
+  <div class="mostrar">
+    <br>
+    <button id="btnCarregarDados">Carregar Dados</button>
+  </div>
+
+  <div>
+    <h3>Lista de postos</h3>
+    <ul id="carregar"></ul>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+/* Estilos comuns a todas as telas */
+
+/* Estilos para o cabeçalho */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Estilos para a área do mapa */
+.map-container {
+    flex: 1;
+}
+
+#mapa {
+    width: 100%;
+    height: 500px;
+}
+.gpspostosprox{
+    background-color: #00285f;
+    height: 5vh;
+    color: #ededed;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  :root {
+    --orange: #f78b00;
+    --blue: #00285f;
+    --gray: #ededed;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    min-height: 100vh;
+  }
+  
+  header {
+    width: 100%;
+    height: 15vh;
+    background: var(--orange);
+    text-align: center;
+  }
+  
+  .content {
+    max-width: 100%;
+    min-width: 30%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+  }
+  
+  nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .brand {
+    font-size: 1.5em;
+    color: var(--blue);
+    cursor: pointer;
+  }
+  
+  nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  nav ul li {
+    list-style: none;
+    padding: 1em;
+    cursor: pointer;
+  }
+  
+  nav ul li a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    color: #00285f83;
+  }
+  
+  nav ul button {
+    border: 0.1em solid var(--blue);
+    background: transparent;
+    padding: 0.8em 4em;
+    cursor: pointer;
+    margin-left: 3em;
+    color: var(--blue);
+    font-weight: bold;
+    border-radius: 0.4em;
+  }
+  
+  nav ul button:hover {
+    transition: background, color 0.6s;
+    background: var(--blue);
+    color: white;
+  }
+  
+  .content .header-block {
+    max-width: 100%;
+    min-width: 30%;
+    height: 45em;
+    background: var(--blue);
+    border-radius: 0.8em;
+    box-shadow: 0.1em 0 1em 0 rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0.1em 0 1em 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0.1em 0 1em 0 rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
+    padding: 1em;
+  }
+  
+  .header-block img {
+    width: 50%;
+    position: absolute;
+    right: 2%;
+    bottom: 2%;
+  }
+  
+  .header-block .text {
+    position: absolute;
+    bottom: 30%;
+    left: 15%;
+  }
+  
+  .header-block .text h2 {
+    color: white;
+    margin-bottom: 2em;
+    text-align: right;
+    transform: translateX(-2em);
+    transition: transform 0.5s;
+  }
+  
+  .header-block .text p {
+    max-width: 28em;
+    color: white;
+    text-align: right;
+    transform: translateX(-2em);
+    transition: transform 0.4s;
+  }
+  footer {
+    width: 100%;
+    height: 5vh;
+  }
+  
+  footer .main {
+    width: 100%;
+    height: 15vh;
+    background: var(--orange);
+    padding: 2em 1em;
+  }
+  
+  .footer-links {
+    max-width: 100%;
+    min-width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2em;
+  }
+  
+  .footer-company,
+  .footer-rental,
+  .footer-contact,
+  .footer-social {
+    color: white;
+    height: 100%;
+    min-height: 10em;
+  }
+  
+  .footer-links h4 {
+    margin-bottom: 1em;
+  }
+  
+  .footer-links {
+    margin-bottom: 0.8em;
+  }
+  
+  .main .footer-social img {
+    width: 3.2em;
+    height: 3.2em;
+  }
+  
+  footer .last {
+    width: 100%;
+    height: 5em;
+    background: var(--blue);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body {
+    margin-bottom: 0;
+  }
+  footer {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header, footer {
+    font-size: 3vw;
+  }
+
+  nav ul li {
+    padding: 0.5em;
+    font-size: 3vw;
+  }
+
+  nav ul button {
+    padding: 0.4em 2em;
+    margin-left: 1.5em;
+    font-size: 3vw;
+  }
+
+  .content .header-block {
+    height: 35em;
+  }
+
+  .header-block .text h2 {
+    font-size: 5vw;
+  }
+
+  .header-block .text p {
+    font-size: 4vw;
+  }
+
+  footer .main {
+    height: 25vh;
+  }
+
+  .footer-links h4 {
+    font-size: 4vw;
+  }
+
+  .footer-links {
+    font-size: 3vw;
+  }
+
+  .main .footer-social img {
+    width: 2.6em;
+    height: 2.6em;
+  }
+
+  footer .last {
+    height: 10vh;
+    font-size: 3vw;
+  }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Avalie seu Posto</title>
+  <link rel="stylesheet" href="detalhes.css" />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .rating {
+      unicode-bidi: bidi-override;
+      direction: rtl;
+    }
+
+    .rating>span {
+      display: inline-block;
+      position: relative;
+      width: 1.1em;
+      color: #ccc;
+      transition: color 0.3s;
+    }
+
+    .rating>span.clicked,
+    .rating>span:hover,
+    .rating>span.clicked~span,
+    .rating>span:hover~span {
+      color: #111;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="content">
+      <nav>
+        <p class="brand">Comparar<strong>Preços</strong></p>
+        <ul>
+          <li><a href="filtro.html">Procurar</a></li>
+          <li><a href="gps.html">Mapa</a></li>
+          <li><a href="index.html">Home</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <header class="gpspostosprox">
+    <h1>Detalhes</h1>
+  </header>
+
+  <div class="details-container">
+    <div class="mostrardetalhes">
+      <h1>Avalie seu Posto</h1>
+      <h2 class="endereco1">Posto X em X lugar</h2>
+      <h2 class="endereco2">Posto X em X lugar</h2>
+      <h2 class="endereco3">Posto X em X lugar</h2>
+      <h2 class="endereco4">Posto X em X lugar</h2>
+
+
+      <p>Dê uma nota ao posto que acabou de visitar</p>
+      <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+      </div>
+
+      <p>Tem Algum comentário? Deixe os outros usuários sabendo!</p>
+      <textarea id="comment" placeholder="Deixe seu comentário aqui."></textarea>
+      <button onclick="saveComment()">Salvar Comentário</button>
+
+      <p>Houve uma mudança de preço? Avise os outros usuários!</p>
+      <p>Preço Atual: <span id="currentPrice">3.34L</span></p>
+      <input type="text" id="newPrice" placeholder="Digite o novo preço">
+      <button onclick="updatePrice()">Atualizar Preço</button>
+      <button onclick="showComments()">Mostrar Comentários</button>
+      <div id="commentsContainer"></div>
+    </div>
+    <div id="mapContainer"></div>
+  </div>
+  <footer>
+    <div class="main">
+      <div class="content footer-links">
+        <div class="footer-company">
+          <h4>Company</h4>
+          <h6>About</h6>
+          <h6>Contact</h6>
+        </div>
+
+        <div class="footer-social">
+          <h4>Stay connected</h4>
+          <div class="social-icons">
+          </div>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact US</h4>
+          <h6>+55 31 997802005</h6>
+          <h6>pedroasodre15@gmail.com</h6>
+
+        </div>
+      </div>
+    </div>
+    <div class="last"></div>
+  </footer>
+  <script src="detalhes.js"></script>
+</body>
+
+</html>

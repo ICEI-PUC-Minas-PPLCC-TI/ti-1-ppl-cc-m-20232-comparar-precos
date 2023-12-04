@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>home</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+
+<body>
+  <header>
+    <div class="content">
+      <nav>
+        <p class="brand">Comparar<strong>Preços</strong></p>
+        <ul>
+          <li><a href="filtro.html">Procurar</a></li>
+          <li><a href="gps.html">Mapa</a></li>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+
+      </nav>
+      <div class="header-block">
+        <div class="text">
+          <h2>Qual seu carro?</h2>
+          <p>
+            Te ajudaremos a encontrar o melhor combustivel para seu carro!
+          </p>
+        </div>
+        <img src="images/car-header.png" alt="Car" />
+      </div>
+    </div>
+  </header>
+  <section class="catalog" id="catalog">
+    <div class="content">
+      <div class="title-wrapper-catalog">
+        <p>Encontre seu carro!</p>
+        <h3>Catalogo</h3>
+      </div>
+      <div class="filter-card">
+        <input type="text" class="search-input" placeholder="Selecione seu carro" />
+        <button class="search-button">Buscar</button>
+      </div>
+      <div class="card-wrapper">
+        <div class="card-item" data-car="vwgol">
+          <img src="images/vwgol.jpeg" alt="Car" />
+          <div class="card-content">
+            <h3>VW Gol</h3>
+            <p>
+              É um carro popular de baixo custo de manutenção e de fácil acesso a peças e acessórios de reposição. É
+              relativamente econômico, foi muito bem vendido e por isso é fácil de comercializar (vender) quando for a
+              hora.
+            </p>
+            <button onclick="location.href = 'https://pt.scribd.com/document/318914864/MANUAL-FOX-VOLKSWAGEN-pdf';"
+              id="myButton" class="float-left submit-button">Saiba mais</button>
+          </div>
+        </div>
+        <div class="card-item" data-car="fiatuno">
+          <img src="images/fiat uno.jpeg" alt="Car" />
+          <div class="card-content">
+            <h3>Fiat Uno</h3>
+            <p>
+              Carro econômico, seguro e pouca manutenção, basicamente só a preventiva e peças de desgaste como o tempo
+              como correia dentada.
+            </p>
+            <button onclick="location.href ='https://www.opinautos.com.br/br/fiat/uno/info/manuais/2021';" id="myButton"
+              class="float-left submit-button">Saiba mais</button>
+          </div>
+        </div>
+        <div class="card-item" data-car="fiatpalio">
+          <img src="images/fiatpalio.jpeg" alt="Car" />
+          <div class="card-content">
+            <h3>Fiat Palio</h3>
+            <p>
+              Ótimo carro, com excelente custo benefício. Peças baratas e fáceis de encontrar, macio, ágil, muito
+              econômico. Boa estabilidade. Na gasolina: cidade média 9,0 km/l aceleração moderada; estrada 14,0 km/l com
+              aceleração moderada.
+            </p>
+            <button onclick="location.href = 'https://www.opinautos.com.br/br/fiat/uno/info/manuais/2021';"
+              id="myButton" class="float-left submit-button">Saiba mais</button>
+          </div>
+        </div>
+        <div class="card-item" data-car="celta">
+          <img src="images/celta.jpeg" alt="Car" />
+          <div class="card-content">
+            <h3>Chevrolet Celta</h3>
+            <p>
+              Celta é um carro econômico. Motor 70c. Manutenção barata assim como o seguro também. Bom pro dia a dia.
+            </p>
+            <button
+              onclick="location.href = 'https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/services/owner-manuals/05-pdf/celta/manual-celta-2008.pdf';"
+              id="myButton" class="float-left submit-button">Saiba mais</button>
+          </div>
+        </div>
+        <div class="card-item" data-car="corolla">
+          <img src="images/corrola.jpeg" alt="Car" />
+          <div class="card-content">
+            <h3>Toyota Corolla</h3>
+            <p>
+              Consumo excepcional, média geral de 18,4 km/l de gasolina em estrada e cidade, num uso de 5500 km. Já fez
+              23 km/l na estrada plana (viagem de 500 km) e na cidade a média é de 19 km/l. Carro premium muito
+              confortável e equipado.
+            </p>
+            <button onclick="location.href = 'https://pt.scribd.com/document/400818371/manual-corolla-pdf';"
+              id="myButton" class="float-left submit-button">Saiba mais</button>
+          </div>
+        </div>
+        <div class="card-item" data-car="civic">
+          <img src="images/civic.jpeg" alt="Car" />
+          <div class="card-content">
+            <h3>Honda Civic</h3>
+            <p>
+              Segurança, performance, conforto, revenda com baixa perda financeira, sem falar na segurança e qualidade
+              da mecânica japonesa.
+            </p>
+            <button
+              onclick="location.href = 'https://www.honda.com.br/pos-venda/automoveis/sites/customer_service/files/2018-02/Civic%202018%20-%20Manual%20do%20proprietário_20180123.pdf';"
+              id="myButton" class="float-left submit-button">Saiba mais</button>
+          </div>
+        </div>
+        <div class="card-item" data-car="fiesta">
+          <img src="images/fiesta.jpeg" alt="Car" />
+          <div class="card-content">
+            <h3>Ford Fiesta</h3>
+            <p>
+              Veículo confortável, boa dirigibilidade. Apesar de não ser tão econômico, a versão com motor 1.6 apresenta
+              bom desempenho. Confortável ao que se propõe. Amplo espaço interno. Painel bem acabado. Estofados de boa
+              qualidade. Manutenções dentro da média.
+            </p>
+            <button
+              onclick="location.href = 'https://www.ford.com.br/content/dam/Ford/website-assets/latam/br/servico-ao-cliente/manuais/2018/manuais-do-proprietario/NewFiesta-Manual%20do%20Proprietario-MY18.pdf';"
+              id="myButton" class="float-left submit-button">Saiba mais</button>
+          </div>
+        </div>
+        <div class="card-item" data-car="fox">
+          <img src="images/fox.jpeg" alt="Car" />
+          <div class="card-content">
+            <h3>VW Fox</h3>
+            <p>
+              Ótima relação peso x potência, o carro tem um ótimo torque, manutenção barata e extremamente completo para
+              o ano/preço.
+            </p>
+            <button onclick="location.href = 'https://pt.scribd.com/document/318914864/MANUAL-FOX-VOLKSWAGEN-pdf';"
+              id="myButton" class="float-left submit-button">Saiba mais</button>
+          </div>
+        </div>
+        <div class="card-item" data-car="siena">
+          <img src="images/siena.jpeg" alt="Car" />
+          <div class="card-content">
+            <h3>Fiat Siena</h3>
+            <p>
+              Conforto, estabilidade, espaço no porta-malas, poucos ruídos internos (quase nada), baixo custo de
+              manutenção (quase nenhum), motor apesar de 1.0 responde bem.
+            </p>
+            <button
+              onclick="location.href = 'https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/197/2019/handbook-2019-grand-siena.pdf';"
+              id="myButton" class="float-left submit-button">Saiba mais</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="content">
+      <div class="title-wrapper-about">
+        <p>Saiba sobre nos</p>
+        <h3>Sobre</h3>
+      </div>
+      <div class="about-content">
+        <div class="left">
+          <img src="images/about.png" alt="About" />
+        </div>
+        <div class="right">
+          <h3></h3>
+          <p>
+            Grupo formado com o intuito de realizar um trabalho da faculdade buscando auxiliar todo tipo de pessoa à
+            encontrar tanto o melhor combustivel para seu carro como o melhor posto para o abastecer de maneira pratica
+            e rapida.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer>
+    <div class="main">
+      <div class="content footer-links">
+        <div class="footer-company">
+          <h4>Company</h4>
+          <h6>About</h6>
+          <h6>Contact</h6>
+        </div>
+
+        <div class="footer-social">
+          <h4>Stay connected</h4>
+          <div class="social-icons">
+            <img src="images/instagram.png" alt="Instagram" />
+            <img src="images/facebook.png" alt="Facebook" />
+          </div>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact US</h4>
+          <h6>+55 31 997802005</h6>
+          <h6>pedroasodre15@gmail.com</h6>
+
+        </div>
+      </div>
+    </div>
+    <div class="last"></div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.querySelector(".search-input");
+      const cards = document.querySelectorAll(".card-item");
+
+      searchInput.addEventListener("input", function () {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        cards.forEach(function (card) {
+          const carName = card.getAttribute("data-car").toLowerCase();
+
+          if (carName.includes(searchTerm)) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

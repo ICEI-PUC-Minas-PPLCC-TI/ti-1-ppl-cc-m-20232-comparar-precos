@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtro</title>
+  <link rel="stylesheet" href="filtro.css">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <header>
+    <div class="content">
+      <nav>
+        <p class="brand">Comparar<strong>Preços</strong></p>
+        <ul>
+          <li><a href="filtro.html">Procurar</a></li>
+          <li><a href="gps.html">Mapa</a></li>
+          <li><a href="index.html">Home</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <header class="gpspostosprox">
+    <h1>Filtro</h1>
+  </header>
+
+
+  <div id="main-container">
+    <div id="filter-container">
+      <form id="Form-postos">
+        <div class="form-group">
+          <div class="col-sm-8">
+            <h4>Pesquisar por:</h4>
+            <div class="col-sm-8">
+              <option value="">Bairro</option>
+              <input type="text" name="filtro_bairro" id="filtro_bairro" onkeyup="ListaPostos()" class="form-control">
+              </input>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-8">
+            <option value="">CEP</option>
+            <input type="text" name="filtro_CEP" id="filtro_CEP" onkeyup="ListaPostos()" class="form-control">
+            </input>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-8">
+            <option value="">Rua</option>
+            <input type="text" name="filtro_Rua" id="filtro_Rua" onkeyup="ListaPostos()" class="form-control">
+            </input>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-8">
+            <option value="">Nome</option>
+            <input type="text" name="filtro_Nome" id="filtro_Nome" onkeyup="ListaPostos()" class="form-control">
+            </input>
+          </div>
+        </div>
+      </form>
+      <div id="Form-postos">
+        <button id="btn-localizacao" onclick="window.location.href='gps.html'">Ativar localização</button>
+      </div>
+    </div>
+    <div id="postos-container">
+      <div id="container-postos">
+
+      </div>
+    </div>
+  </div>
+  <hr>
+  <footer>
+    <div class="main">
+      <div class="content footer-links">
+        <div class="footer-company">
+          <h4>Company</h4>
+          <h6>About</h6>
+          <h6>Contact</h6>
+        </div>
+
+        <div class="footer-social">
+          <h4>Stay connected</h4>
+
+        </div>
+        <div class="footer-contact">
+          <h4>Contact US</h4>
+          <h6>+55 31 997802005</h6>
+          <h6>pedroasodre15@gmail.com</h6>
+
+        </div>
+      </div>
+    </div>
+    <div class="last"></div>
+  </footer>
+  <script src="filtro.js" defer></script>
+</body>
+
+</html>
