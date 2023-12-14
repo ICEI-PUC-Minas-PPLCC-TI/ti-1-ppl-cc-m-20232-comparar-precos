@@ -1,35 +1,35 @@
 <<<<<<< HEAD
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Comparação de preços
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Nunes Neumann
+    given-names: Eduardo
+  - family-names: Caetano Silva Rodrigues
+    given-names: Marlon 
+  - family-names: Sodre de Oliveira
+    given-names: Pedro Augusto
+  - family-names: de Amorim Dourado Fonseca
+    given-names: Luan 
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Vieira Carneiro
+    given-names: Rommel 
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Mauro Pereira
+    given-names: Lucio 
+- name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Nepomuceno Curto
+    given-names: Hayala 
 keywords:
-  - 
-  - 
-repository-code: 
+  - Preços
+  - Gasolina
+repository-code: https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-20232-comparar-precos/tree/master
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2022-07-14
+date-released: 2023-12-14
 =======
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
