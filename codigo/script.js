@@ -1,52 +1,33 @@
+const http = require('http');
+const port = 8080;
+
+http.createServer((req, res) => {
+  const headers = {
+    'Access-Control-Allow-Origin': '*', // Permite que todos os domínios acessem
+    'Access-Control-Allow-Methods': 'OPTIONS, POST, GET', // Métodos permitidos
+    'Access-Control-Max-Age': 2592000, // 30 dias
+  };
+
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204, headers);
+    res.end();
+    return;
+  }
+
+  if (['GET', 'POST'].indexOf(req.method) > -1) {
+    res.writeHead(200, headers);
+    res.end('Hello World');
+    return;
+  }
+
+  res.writeHead(405, headers);
+  res.end(`${req.method} não é permitido para a solicitação.`);
+}).listen(port);
 document.addEventListener("DOMContentLoaded", function () {
-    const registerForm = document.getElementById("register-form");
-    const loginForm = document.getElementById("login-form");
-
-    let registeredUsers = [];
-
-    if (registerForm) {
-        registerForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const registerUsername = document.getElementById("register-username").value;
-            const registerPassword = document.getElementById("register-password").value;
-
-            // Armazena o usuário registrado em um formato JSON
-            const newUser = {
-                username: registerUsername,
-                password: registerPassword
-            };
-
-            registeredUsers.push(newUser);
-
-            // Atualiza a lista de usuários registrados em formato JSON
-            localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
-
-            alert("Usuário registrado com sucesso. Você será redirecionado para a tela de login.");
-            window.location.href = "login.html";
-        });
-    }
-
-    if (loginForm) {
-        loginForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const loginUsername = document.getElementById("login-username").value;
-            const loginPassword = document.getElementById("login-password").value;
-
-            const storedUsers = JSON.parse(localStorage.getItem("registeredUsers")) || [];
-
-            const user = storedUsers.find(user => user.username === loginUsername && user.password === loginPassword);
-
-            if (user) {
-                alert("Login bem-sucedido. Redirecionando para a tela de GPS.");
-                window.location.href = "gps.html";
-            } else {
-                alert("Credenciais inválidas. Tente novamente.");
-            }
-        });
-    }
+   
 
     if (window.location.pathname.endsWith("gps.html")) {
-        mapboxgl.accessToken = 'pk.eyJ1Ijoicm9tbWVsY2FybmVpcm8tcHVjIiwiYSI6ImNsb3ZuMTBoejBsd2gyamwzeDZzcWl5b3oifQ.VPWc3qoyon8Z_-URfKpvKg';
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZWR1bnVuZXNuIiwiYSI6ImNscGxma2RrcDAzdWEyanBlYWJ4Y25yZ2MifQ.URgDFdzGbdaqGcaYhfE5MQ';
         var map = new mapboxgl.Map({
             container: 'mapa',
             style: 'mapbox://styles/mapbox/streets-v11',
@@ -60,6 +41,37 @@ document.addEventListener("DOMContentLoaded", function () {
             new mapboxgl.Marker()
                 .setLngLat(lngLat)
                 .addTo(map);
+
+            map.flyTo({center: lngLat, zoom: 14});
+        }
+        function addRoute(lngLatStart, lngLatEnd) {
+            // Solicitação à API de Direções do Mapbox
+            fetch(`https://api.mapbox.com/directions/v5/mapbox/driving/${lngLatStart[0]},${lngLatStart[1]};${lngLatEnd[0]},${lngLatEnd[1]}?geometries=geojson&access_token=SEU_TOKEN_MAPBOX`)
+                .then(response => response.json())
+                .then(data => {
+                    const route = data.routes[0].geometry;
+                    console.log(data)
+
+                    // Adiciona a rota no mapa
+                    map.addSource('route', {
+                        'type': 'geojson',
+                        'data': route
+                    });
+
+                    map.addLayer({
+                        'id': 'route',
+                        'type': 'line',
+                        'source': 'route',
+                        'layout': {
+                            'line-join': 'round',
+                            'line-cap': 'round'
+                        },
+                        'paint': {
+                            'line-color': '#888',
+                            'line-width': 8
+                        }
+                    });
+                });
         }
 
         function updateMarkers() {
@@ -73,28 +85,38 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Limpa o array de marcadores
                 markers = [];
 
-                // Adiciona os marcadores para cada posto armazenado
-                dados.forEach(posto => {
-                    const marker = new mapboxgl.Marker()
-                        .setLngLat([posto.lng, posto.lat])
-                        .addTo(map);
-                        
-                    const popup = new mapboxgl.Popup({ offset: 25 })
-                    .setHTML(
-                        `<h3>${posto.nome}</h3>` +
-                        `<p>Rua: ${posto.Rua}<br>` +
-                        `Bairro: ${posto.Bairro}<br>` +
-                        `CEP: ${posto.CEP}<br>` +
-                        `Número: ${posto.Numero}<br>` +
-                        `Preço: ${posto.Preço}</p>` +
-                        `<button id="detalhes${posto.id}" onclick="window.location.href='detalhes.html?id=${posto.id}'">Detalhes</button>`
-                    );
+                
+dados.forEach(posto => {
+    const marker = new mapboxgl.Marker()
+        .setLngLat([posto.lng, posto.lat])
+        .addTo(map);
 
-                    marker.setPopup(popup);
+    const popup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML(
+            `<h3>${posto.nome}</h3>` +
+            `<p>Rua: ${posto.Rua}<br>` +
+            `Bairro: ${posto.Bairro}<br>` +
+            `CEP: ${posto.CEP}<br>` +
+            `Número: ${posto.Numero}<br>` +
+            `Preço: ${posto.Preço}</p>` +
+            `<button id="detalhes${posto.id}" onclick="window.location.href='detalhes.html?id=${posto.id}'">Detalhes</button>` +
+            `<button id="rota${posto.id}">Gerar Rota</button>`
+        );
 
-                    // Adiciona o marcador ao array de marcadores
-                    markers.push(marker);
-                });
+    marker.setPopup(popup);
+
+    // Adiciona o manipulador de eventos ao botão depois que o popup for carregado
+    popup.on('open', () => {
+        const rotaButton = document.getElementById(`rota${posto.id}`);
+        rotaButton.addEventListener('click', () => {
+            addRoute(currentPosition, [posto.lng, posto.lat]);
+        });
+    });
+
+    // Adiciona o marcador ao array de marcadores
+    markers.push(marker);
+});
+
             });
         }
 
@@ -108,9 +130,10 @@ document.addEventListener("DOMContentLoaded", function () {
             map.flyTo({center: lngLat, zoom: 14});
         }
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position => {
+            navigator.geolocation.watchPosition(position => {
                 const lngLat = [position.coords.longitude, position.coords.latitude];
                 addCurrentLocationMarker(lngLat);
+                currentPosition = lngLat; 
             }, () => {
                 alert("Não foi possível obter sua localização.");
             });
