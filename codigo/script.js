@@ -1,28 +1,4 @@
-const http = require('http');
-const port = 8080;
 
-http.createServer((req, res) => {
-  const headers = {
-    'Access-Control-Allow-Origin': '*', // Permite que todos os domínios acessem
-    'Access-Control-Allow-Methods': 'OPTIONS, POST, GET', // Métodos permitidos
-    'Access-Control-Max-Age': 2592000, // 30 dias
-  };
-
-  if (req.method === 'OPTIONS') {
-    res.writeHead(204, headers);
-    res.end();
-    return;
-  }
-
-  if (['GET', 'POST'].indexOf(req.method) > -1) {
-    res.writeHead(200, headers);
-    res.end('Hello World');
-    return;
-  }
-
-  res.writeHead(405, headers);
-  res.end(`${req.method} não é permitido para a solicitação.`);
-}).listen(port);
 document.addEventListener("DOMContentLoaded", function () {
    
 
