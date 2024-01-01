@@ -71,13 +71,14 @@
       </div>
 
       <p>Tem Algum comentário? Deixe os outros usuários sabendo!</p>
-      <textarea id="comment" placeholder="Deixe seu comentário aqui."></textarea>
-      <button onclick="saveComment()">Salvar Comentário</button>
+      <textarea id="comment" placeholder="Deixe seu comentário aqui." style="display: none;"></textarea>
+      <button id="saveCommentButton" onclick="saveComment()" style="display: none;">Salvar Comentário</button>
+      <a id="loginLink" href="login.html" style="display: none;">Fazer login</a>
 
       <p>Houve uma mudança de preço? Avise os outros usuários!</p>
       <p>Preço Atual: <span id="currentPrice">3.34L</span></p>
-      <input type="text" id="newPrice" placeholder="Digite o novo preço">
-      <button onclick="updatePrice()">Atualizar Preço</button>
+      <input type="text" id="newPrice" placeholder="Digite o novo preço" style="display: none;">
+      <button id="updatePriceButton" onclick="updatePrice()" style="display: none;">Atualizar Preço</button>
       <button onclick="showComments()">Mostrar Comentários</button>
       <div id="commentsContainer"></div>
     </div>

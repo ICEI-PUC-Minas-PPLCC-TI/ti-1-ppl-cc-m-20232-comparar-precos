@@ -4,7 +4,7 @@ window.onload = function() {
   
     var nomeCadastro = document.getElementById('nome').value;
     var usuarioCadastro = document.getElementById('username').value;
-    var senhaCadastro = document.getElementById('password').value;
+    var senhaCadastro = btoa(document.getElementById('password').value); // Criptografa a senha
     var dataCadastro = new Date().toISOString(); // Registra a data e hora atual
   
     fetch('https://login.eduardonunesneu.repl.co/usuarios', {

@@ -1,4 +1,27 @@
-// Exemplo de função para atualizar o preço
+window.onload = function() {
+  
+  var user = JSON.parse(localStorage.getItem('user'));
+
+  // Verifique se o usuário está logado
+  if (user) {
+    
+    document.getElementById('comment').style.display = 'block';
+    document.getElementById('newPrice').style.display = 'block';
+    document.getElementById('saveCommentButton').style.display = 'block';
+    document.getElementById('updatePriceButton').style.display = 'block';
+    document.getElementById('loginLink').style.display = 'none';
+  } else {
+    
+    document.getElementById('comment').style.display = 'none';
+    document.getElementById('newPrice').style.display = 'none';
+    document.getElementById('saveCommentButton').style.display = 'none';
+    document.getElementById('updatePriceButton').style.display = 'none';
+    document.getElementById('loginLink').style.display = 'block';
+  }
+
+  
+};
+
 function updatePrice() {
     var newPrice = document.getElementById('newPrice').value;
     if(newPrice) {
@@ -64,24 +87,24 @@ function updatePrice() {
   
   
 
-  // Exemplo de função para capturar a avaliação com estrelas
+  
   var stars = document.querySelectorAll('.rating > span');
   for (var i = 0; i < stars.length; i++) {
     stars[i].addEventListener('click', function() {
       var rating = this.parentNode.children.length - Array.from(this.parentNode.children).indexOf(this);
       console.log('Avaliação: ' + rating);
 
-      // Removendo a classe "clicked" de todos os elementos
+      
       var allStars = document.querySelectorAll('.rating > span');
       allStars.forEach(function(star) {
         star.classList.remove('clicked');
       });
 
-      // Adicionando a classe "clicked" ao elemento clicado
+      
       this.classList.add('clicked');
     });
 
-    // Adicionando tratamento para quando o mouse sai do conjunto de estrelas
+    
     stars[i].addEventListener('mouseleave', function() {
       var allStars = document.querySelectorAll('.rating > span');
       allStars.forEach(function(star) {
@@ -89,7 +112,7 @@ function updatePrice() {
       });
     });
 
-    // Adicionando tratamento para quando o mouse está sobre uma estrela
+    
     stars[i].addEventListener('mouseenter', function() {
       var index = Array.from(this.parentNode.children).indexOf(this);
       var starsToHighlight = Array.from(this.parentNode.children).slice(index);
@@ -102,18 +125,18 @@ function updatePrice() {
     var commentInput = document.getElementById('comment');
     var comment = commentInput.value;
     if(comment) {
-      // Cria um ID único para o comentário
+      
       var commentId = 'comment_' + Date.now();
   
-      // Busca os detalhes do posto de gasolina
+     
       fetch('https://json-server.eduardonunesneu.repl.co/Postos/' + postoId)
       .then(function (response) {return response.json()})
       .then(function (posto){
-        // Adiciona o novo comentário à lista existente de comentários
+        
         var comentarios = posto.Comentarios || [];
         comentarios.push({id: commentId, texto: comment});
   
-        // Salva a lista atualizada de comentários no servidor JSON
+        
         return fetch('https://json-server.eduardonunesneu.repl.co/Postos/' + postoId, {
           method: 'PATCH',
           headers: {
@@ -126,7 +149,7 @@ function updatePrice() {
       })
       .then(function(response) {
         if(response.ok) {
-          // Limpa o campo de entrada
+          
           commentInput.value = '';
           alert('Comentário salvo com sucesso!');
         } else {

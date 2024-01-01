@@ -16,12 +16,13 @@ window.onload = function() {
     event.preventDefault();
   
     var usuarioLogin = document.getElementById('usernamel').value;
-    var senhaLogin = document.getElementById('passwordl').value;
-  
-    // Verifique se o usuário existe e a senha está correta
-    var user = Usuario.find(function(user) {
-      return user.usuario === usuarioLogin && user.senha === senhaLogin;
-    });
+    var senhaLogin = btoa(document.getElementById('passwordl').value); // Criptografa a senha
+
+// Verifique se o usuário existe e a senha está correta
+var user = Usuario.find(function(user) {
+  return user.usuario === usuarioLogin && user.senha === senhaLogin;
+});
+
   
     if (user) {
       // O login foi bem-sucedido

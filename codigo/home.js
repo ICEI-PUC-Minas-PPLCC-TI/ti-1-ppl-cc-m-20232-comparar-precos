@@ -13,3 +13,18 @@ function leiaMais(){
 
         }
 }
+window.onload = function() {
+    
+    var user = JSON.parse(localStorage.getItem('user'));
+  
+    
+    if (user) {
+      
+      document.querySelector('li a[href="cadastro.html"]').textContent = user.usuario;
+      document.querySelector('li a[href="cadastro.html"]').href = 'perfil.html';
+    } else {
+      
+      document.querySelector('li a[href="cadastro.html"]').textContent = 'Login';
+      document.querySelector('li a[href="cadastro.html"]').href = 'login.html';
+    }
+  };
