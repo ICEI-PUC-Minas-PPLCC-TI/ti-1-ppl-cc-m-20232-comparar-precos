@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: Comparação de preços
@@ -6,23 +5,23 @@ authors:
   - family-names: Nunes Neumann
     given-names: Eduardo
   - family-names: Caetano Silva Rodrigues
-    given-names: Marlon 
+    given-names: Marlon
   - family-names: Sodre de Oliveira
     given-names: Pedro Augusto
   - family-names: de Amorim Dourado Fonseca
-    given-names: Luan 
+    given-names: Luan
   - name-suffix: Professor
     affiliation: PUC Minas
     family-names: Vieira Carneiro
-    given-names: Rommel 
+    given-names: Rommel
   - name-suffix: Professor
     affiliation: PUC Minas
     family-names: Mauro Pereira
-    given-names: Lucio 
+    given-names: Lucio
 - name-suffix: Professor
     affiliation: PUC Minas
     family-names: Nepomuceno Curto
-    given-names: Hayala 
+    given-names: Hayala
 keywords:
   - Preços
   - Gasolina
@@ -30,36 +29,3 @@ repository-code: https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-20232-
 license: CC-BY-4.0
 version: 1.0.0
 date-released: 2023-12-14
-=======
-cff-version: 1.0.1
-message: Please cite this software using these metadata.
-title: 
-authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
-keywords:
-  - 
-  - 
-repository-code: 
-license: CC-BY-4.0
-version: 1.0.0
-date-released: 2022-07-14
->>>>>>> 576e4073eb686b7caee5801aac8f95491eb4d605
